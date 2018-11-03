@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#3C64E6</color>
+    <color name="colorWhite">#E5E5E5</color>
+    <color name="colorShadow">#AA000000</color>
+
+    <!-- Dark Theme -->
+
+    <color name="colorBackground">#1B1D2B</color>
+    <color name="colorButtonStart">#3F51B5</color>
+    <color name="colorButtonEnd">#303F9F</color>
+    <color name="colorButtonPressedStart">#314095</color>
+    <color name="colorButtonPressedEnd">#243075</color>
+    <color name="colorButtonSecondaryStart">#5A6DD6</color>
+    <color name="colorButtonSecondaryEnd">#4E5EB9</color>
+    <color name="colorButtonSecondaryPressedStart">#4C5CB7</color>
+    <color name="colorButtonSecondaryPressedEnd">#42509E</color>
+    <color name="colorButtonQuit">#303653</color>
+    <color name="colorButtonQuitPressed">#3F4473</color>
+    <color name="colorStroke">#161824</color>
+    <color name="colorText">#E5E5E5</color>
+    <color name="colorTextAccent">#A9BEF0</color>
+    <color name="colorBoard">#303653</color>
+    <color name="colorTargetOuter">#3F4473</color>
+    <color name="colorTargetInner">#616CAC</color>
+    <color name="colorShip">#90ABED</color>
+    <color name="colorCollision">#F43333</color>
+
+    <!-- Light Theme -->
+
+    <color name="colorLightBackground">#FAFAFA</color>
+    <color name="colorLightButtonStart">#E3E3E3</color>
+    <color name="colorLightButtonEnd">#D2D2D2</color>
+    <color name="colorLightButtonPressedStart">#D2D2D2</color>
+    <color name="colorLightButtonPressedEnd">#C1C1C1</color>
+    <color name="colorLightButtonSecondaryStart">#E3E3E3</color>
+    <color name="colorLightButtonSecondaryEnd">#D2D2D2</color>
+    <color name="colorLightButtonSecondaryPressedStart">#D2D2D2</color>
+    <color name="colorLightButtonSecondaryPressedEnd">#C1C1C1</color>
+    <color name="colorLightButtonQuit">#E3E3E3</color>
+    <color name="colorLightButtonQuitPressed">#D2D2D2</color>
+    <color name="colorLightStroke">#333333</color>
+    <color name="colorLightText">#111111</color>
+    <color name="colorLightTextAccent">#0D0D0D</color>
+    <color name="colorLightBoard">#D6D6D6</color>
+    <color name="colorLightTargetOuter">#FAFAFA</color>
+    <color name="colorLightTargetInner">#FFFFFF</color>
+    <color name="colorLightShip">#90ABED</color>
+    <color name="colorLightCollision">#F43333</color>
+</resources>

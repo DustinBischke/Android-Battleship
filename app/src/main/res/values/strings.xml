@@ -1,0 +1,86 @@
+<resources>
+    <!-- Menus -->
+
+    <string name="app_name">Battleship</string>
+    <string name="singleplayer">SinglePlayer</string>
+    <string name="quick_match">Quick Match</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="view_invites">View Invites</string>
+    <string name="sign_in_description">Sign In To Access Online Services</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="exit_game">Exit Game</string>
+    <string name="place_ships">Place Your Ships</string>
+    <string name="place_ships_instructions">Drag and Drop to set Position. Tap to Rotate</string>
+    <string name="random">Place Ships Randomly</string>
+    <string name="rotate">Rotate</string>
+    <string name="target_ships">Tap a Square to Target Coordinate</string>
+    <string name="wait_your_turn">Please Wait Until Your Turn</string>
+    <string name="confirm_ships">Confirm Ships</string>
+    <string name="your_turn">Your Turn</string>
+    <string name="other_player_turn">%1$s\'s Turn</string>
+    <string name="ai">AI</string>
+    <string name="ships_remaining">Ships Remaining</string>
+    <string name="please_wait">Please Wait&#8230;</string>
+    <string name="timer">20</string>
+
+    <!-- Ships -->
+
+    <string name="carrier">Aircraft Carrier</string>
+    <string name="carrier_size">5</string>
+    <string name="battleship">Battleship</string>
+    <string name="battleship_size">4</string>
+    <string name="cruiser">Cruiser</string>
+    <string name="cruiser_size">3</string>
+    <string name="submarine">Submarine</string>
+    <string name="submarine_size">3</string>
+    <string name="destroyer">Destroyer</string>
+    <string name="destroyer_size">2</string>
+
+    <!-- Popups -->
+
+    <string name="settings">Settings</string>
+    <string name="difficulty">Set Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="classic">Classic</string>
+    <string name="hitstreak">Hit Streak</string>
+    <string name="classic_description">Switch Players After Each Shot</string>
+    <string name="hitstreak_description">Keep Shooting Until You Miss</string>
+    <string name="quit_title">Quit Game</string>
+    <string name="quit_message">Are you sure you want to quit?</string>
+    <string name="resume">Resume</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="you_win">You Win!</string>
+    <string name="you_lose">You Lost This Match</string>
+    <string name="other_player_won">%1$s Won!</string>
+    <string name="play_again">Play Again</string>
+    <string name="return_to_menu">Return to Menu</string>
+    <string name="invite_popup_text">Invite Received!</string>
+    <string name="challenged_you">%1$s Challenged you to a Game!</string>
+    <string name="accept_invite_popup">Accept</string>
+    <string name="deny_invite_popup">Deny</string>
+
+    <!-- Errors -->
+
+    <string name="error_title">Error</string>
+    <string name="invalid_ships_error">Invalid Ship Locations! Ships Must Not Overlap</string>
+    <string name="game_problem">An error occurred while starting the game. Please try again.</string>
+    <string name="signin_other_error">There was an issue with sign in. Please try again later.</string>
+    <string name="status_exception_error">%1$s (status %2$d). %3$s.</string>
+    <string name="status_multiplayer_error_not_trusted_tester">Anyone you invite must be a trusted tester</string>
+    <string name="match_error_already_rematched">This rematch has already been started!</string>
+    <string name="client_reconnect_required">Games client reconnect required</string>
+    <string name="network_error_operation_failed">Network error: Operation failed</string>
+    <string name="internal_error">Internal error</string>
+    <string name="unexpected_status">Unexpected status: %1$s</string>
+    <string name="match_error_inactive_match">This match is inactive.</string>
+    <string name='match_error_locally_modified'>This match has locally-modified data.  This operation cannot be performed until the match is sent to the server.</string>
+
+    <!-- Content Descriptions -->
+
+    <string name="play_games">Google Play Games</string>
+    <string name="trophy">Trophy</string>
+</resources>

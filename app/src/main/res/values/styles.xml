@@ -1,0 +1,257 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Background">
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="Screen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Image">
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="Logo" parent="Image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:src">@drawable/battleship_logo</item>
+    </style>
+
+    <style name="PlayGamesIcon" parent="Image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:src">@drawable/play_games_icon</item>
+    </style>
+
+    <style name="PopupIcon" parent="Image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="Alert" parent="PopupIcon">
+        <item name="android:src">@drawable/alert</item>
+    </style>
+
+    <style name="Trophy" parent="PopupIcon">
+        <item name="android:src">@drawable/trophy</item>
+    </style>
+
+    <style name="Grid">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@drawable/grid_stroke</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="GridSmall" parent="Grid">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="ShipStatuses">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ShipRow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Ship">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ShipRowBottom" parent="ShipRow">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="ShipIcon" parent="Image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="ShipIconTop" parent="ShipIcon">
+        <item name="android:layout_height">36dp</item>
+    </style>
+
+    <style name="ShipInfo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="TextInstructions" parent="Text">
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="TextSmall" parent="Text">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextMedium" parent="TextInstructions">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextLarge" parent="Text">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextLargeAccent" parent="TextLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorTextAccent</item>
+    </style>
+
+    <style name="TextSignIn" parent="Text">
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="TextShipSize" parent="TextSmall">
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorTextAccent</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+    <style name="ButtonBlue" parent="@style/Button">
+        <item name="android:background">@drawable/button</item>
+    </style>
+
+    <style name="ButtonBlueLast" parent="@style/Button">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="ButtonLight" parent="@style/Button">
+        <item name="android:background">@drawable/button_light</item>
+    </style>
+
+    <style name="RadioGroup">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="QuitGameLayout">
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_gravity">top|right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ButtonQuit">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/quit</item>
+        <item name="android:background">@drawable/button_quit</item>
+    </style>
+
+    <style name="PopupShadow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorShadow</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Popup" parent="@style/Screen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/popup</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="InvitePopup" parent="@style/Screen">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">top|right</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:height">10dp</item>
+    </style>
+
+    <style name="InvitePopupText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:text">@string/invite_popup_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="InvitePopupButton">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>
