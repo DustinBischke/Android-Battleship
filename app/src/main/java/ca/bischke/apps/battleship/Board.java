@@ -17,7 +17,7 @@ public class Board implements Parcelable
 
     public Board()
     {
-        this.statuses = new BoardStatus[BoardSize.ROWS][BoardSize.COLUMNS];
+        this.statuses = new BoardStatus[BoardSize.COLUMNS][BoardSize.ROWS];
 
         for (BoardStatus[] row : statuses)
         {
@@ -60,6 +60,36 @@ public class Board implements Parcelable
     public List<Ship> getShips()
     {
         return ships;
+    }
+
+    public int getSmallestRemainingShip()
+    {
+        int smallest = 5;
+
+        for (Ship ship : ships)
+        {
+            if (ship.isAlive() && ship.getLength() < smallest)
+            {
+                smallest = ship.getLength();
+            }
+        }
+
+        return smallest;
+    }
+
+    public int getLongestRemainingShip()
+    {
+        int longest = 2;
+
+        for (Ship ship : ships)
+        {
+            if (ship.isAlive() && ship.getLength() > longest)
+            {
+                longest = ship.getLength();
+            }
+        }
+
+        return longest;
     }
 
     public boolean areShipsPlaced()
