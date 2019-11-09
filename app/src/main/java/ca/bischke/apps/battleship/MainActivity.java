@@ -1,14 +1,12 @@
 package ca.bischke.apps.battleship;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
-import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
@@ -19,12 +17,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.games.Game;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.games.GamesCallbackStatusCodes;
@@ -355,13 +355,13 @@ public class MainActivity extends AppCompatActivity
         startGameSinglePlayer();
     }
 
-    public void buttonMedium(View view)
+    /*public void buttonMedium(View view)
     {
         //Log.d(TAG, "Medium Button Clicked");
         hidePopups();
         singlePlayerDifficulty = AIDifficulty.MEDIUM;
         startGameSinglePlayer();
-    }
+    }*/
 
     public void buttonHard(View view)
     {
@@ -697,6 +697,7 @@ public class MainActivity extends AppCompatActivity
         BattleshipGridPlacing.addView(myDrawableBoardPlacing);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void displayDrawableBoards()
     {
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -724,7 +725,7 @@ public class MainActivity extends AppCompatActivity
                             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN)
                             {
                                 ClipData data = ClipData.newPlainText("", "");
-                                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(new LinearLayout(targetDrawableBoard.getContext()));
+                                View.DragShadowBuilder shadowBuilder = new MyDragShadowBuilder();
                                 view.startDrag(data, shadowBuilder, view, 0);
 
                                 return true;

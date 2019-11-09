@@ -4,13 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.support.v7.widget.AppCompatImageButton;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import java.util.List;
 
@@ -89,7 +91,7 @@ class DrawableBoardPlacing extends DrawableBoard
     private boolean shipFirstTouch;
     private boolean shipDragged;
 
-    public DrawableBoardPlacing(Context context, Board board, int buttonSize)
+    public DrawableBoardPlacing(final Context context, Board board, int buttonSize)
     {
         super(context, buttonSize);
         this.board = board;
@@ -144,7 +146,7 @@ class DrawableBoardPlacing extends DrawableBoard
                                 colorShips();
 
                                 ClipData data = ClipData.newPlainText("", "");
-                                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(new LinearLayout(getContext()));
+                                View.DragShadowBuilder shadowBuilder = new MyDragShadowBuilder();
                                 view.startDrag(data, shadowBuilder, view, 0);
 
                                 return true;

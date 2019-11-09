@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/Background"
     tools:context=".MainActivity">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,7 +14,8 @@
 
         <LinearLayout
             android:id="@+id/screen_main_offline"
-            style="@style/Screen">
+            style="@style/Screen"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/image_battleship_logo"
@@ -538,11 +537,11 @@
                     android:onClick="buttonEasy"
                     android:text="@string/easy" />
 
-                <Button
+                <!--<Button
                     android:id="@+id/button_medium"
                     style="@style/ButtonBlue"
                     android:onClick="buttonMedium"
-                    android:text="@string/medium" />
+                    android:text="@string/medium" />-->
 
                 <Button
                     android:id="@+id/button_hard"
@@ -675,4 +674,4 @@
         </LinearLayout>
     </FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

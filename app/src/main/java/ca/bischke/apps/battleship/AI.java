@@ -12,7 +12,6 @@ import java.util.Random;
 
 public class AI
 {
-    private List<Probability> probabilities;
     private AIDifficulty difficulty;
     private Board board;
     private Random random = new Random();
@@ -21,159 +20,6 @@ public class AI
     {
         this.difficulty = difficulty;
         this.board = board;
-        probabilities = new ArrayList<>();
-        initializeProbabilities();
-    }
-
-    private List<Coordinate> allCoordinates()
-    {
-        List<Coordinate> coordinates = new ArrayList<>();
-
-        for (int i = 0; i < BoardSize.COLUMNS; i++)
-        {
-            for (int j = 0; j < BoardSize.ROWS; j++)
-            {
-                coordinates.add(new Coordinate(i, j));
-            }
-        }
-
-        return coordinates;
-    }
-
-    private void initializeProbabilities()
-    {
-        if (difficulty == AIDifficulty.EASY || difficulty == AIDifficulty.MEDIUM)
-        {
-            for (int i = 0; i < BoardSize.COLUMNS; i++)
-            {
-                for (int j = 0; j < BoardSize.ROWS; j++)
-                {
-                    probabilities.add(new Probability(new Coordinate(i, j), 1));
-                }
-            }
-        }
-        else if (difficulty == AIDifficulty.HARD)
-        {
-            probabilities = calculateProbabilities(checkerboardCoordinates());
-        }
-    }
-
-    private Probability calculateProbability(Coordinate coordinate)
-    {
-        int x = coordinate.getX();
-        int y = coordinate.getY();
-        int probability = 0;
-        int longestShip = board.getLongestRemainingShip();
-
-        for (int i = x - 1; i > 0 && i > x - longestShip; i--)
-        {
-            if (board.isStatusHidden(i, y))
-            {
-                probability += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        for (int i = x + 1; i < 9 && i < x + longestShip; i++)
-        {
-            if (board.isStatusHidden(i, y))
-            {
-                probability += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        for (int i = y - 1; i > 0 && i > y - longestShip; i--)
-        {
-            if (board.isStatusHidden(x, i))
-            {
-                probability += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        for (int i = y + 1; i < 9 && i < y + longestShip; i++)
-        {
-            if (board.isStatusHidden(x, i))
-            {
-                probability += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        return new Probability(coordinate, probability);
-    }
-
-    private List<Probability> calculateProbabilities(List<Coordinate> coordinates)
-    {
-        List<Probability> probabilities = new ArrayList<>();
-
-        for (Coordinate coordinate : coordinates)
-        {
-            probabilities.add(calculateProbability(coordinate));
-        }
-
-        return sortProbabilities(probabilities);
-    }
-
-    private List<Probability> sortProbabilities(List<Probability> probabilities)
-    {
-        Collections.sort(probabilities, new Comparator<Probability>()
-        {
-            @Override
-            public int compare(Probability p1, Probability p2)
-            {
-                if (p1.getProbability() > p2.getProbability())
-                {
-                    return -1;
-                }
-                else if (p1.getProbability() < p2.getProbability())
-                {
-                    return 1;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-        });
-
-        return probabilities;
-    }
-
-    private Coordinate highestProbabilityCoordinate()
-    {
-        sortProbabilities(probabilities);
-
-        List<Coordinate> mostLikelyCoordinates = new ArrayList<>();
-        int highestProbability = probabilities.get(0).getProbability();
-
-        for (Probability probability : probabilities)
-        {
-            if (probability.getProbability() == highestProbability)
-            {
-                mostLikelyCoordinates.add(probability.getCoordinate());
-            }
-            else
-            {
-                break;
-            }
-        }
-
-        int index = random.nextInt(mostLikelyCoordinates.size());
-        return mostLikelyCoordinates.get(index);
     }
 
     // Returns True if Squares to the right of Coordinate are Hidden
@@ -240,7 +86,7 @@ public class AI
     // Returns List of Coordinates in Checkerboard formation
     private List<Coordinate> checkerboardCoordinates()
     {
-        List<Coordinate> coordinates = new ArrayList<>();
+        List<Coordinate> checkerboard = new ArrayList<>();
         int random = (int)Math.round(Math.random());
 
         for (int i = 0; i < BoardSize.COLUMNS; i++)
@@ -252,20 +98,22 @@ public class AI
                 {
                     if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1))
                     {
-                        coordinates.add(new Coordinate(i, j));
+                        Coordinate coordinate = new Coordinate(i, j);
+                        checkerboard.add(coordinate);
                     }
                 }
                 else
                 {
                     if ((i % 2 == 0 && j % 2 == 1) || (i % 2 == 1 && j % 2 == 0))
                     {
-                        coordinates.add(new Coordinate(i, j));
+                        Coordinate coordinate = new Coordinate(i, j);
+                        checkerboard.add(coordinate);
                     }
                 }
             }
         }
 
-        return coordinates;
+        return checkerboard;
     }
 
     // Returns List of all Hidden Coordinates
@@ -279,7 +127,8 @@ public class AI
             {
                 if (board.isStatusHidden(i, j))
                 {
-                    hiddenCoordinates.add(new Coordinate(i, j));
+                    Coordinate coordinate = new Coordinate(i, j);
+                    hiddenCoordinates.add(coordinate);
                 }
             }
         }
@@ -367,7 +216,9 @@ public class AI
         List<Coordinate> possibleCoordinates = allHiddenCoordinates();
 
         int index = random.nextInt(possibleCoordinates.size());
-        return possibleCoordinates.get(index);
+        Coordinate coordinate = possibleCoordinates.get(index);
+
+        return coordinate;
     }
 
     // Returns Random Coordinate from Coordinates that could Possibly hold a Ship
@@ -376,7 +227,9 @@ public class AI
         List<Coordinate> possibleCoordinates = allPossibleShipCoordinates();
 
         int index = random.nextInt(possibleCoordinates.size());
-        return possibleCoordinates.get(index);
+        Coordinate coordinate = possibleCoordinates.get(index);
+
+        return coordinate;
     }
 
     // Returns Coordinate that is most likely to be holding a Ship
@@ -414,7 +267,9 @@ public class AI
         }
 
         int index = random.nextInt(mostLikelyCoordinates.size());
-        return mostLikelyCoordinates.get(index);
+        Coordinate coordinate = mostLikelyCoordinates.get(index);
+
+        return coordinate;
     }
 
     // Returns Coordinate List of all Hit Ships
@@ -530,7 +385,9 @@ public class AI
         }
 
         int index = random.nextInt(logicalCoordinates.size());
-        return logicalCoordinates.get(index);
+        Coordinate coordinate = logicalCoordinates.get(index);
+
+        return coordinate;
     }
 
     // Returns Coordinate inline with 2 or more Hit Ships
@@ -592,7 +449,9 @@ public class AI
         if (logicalCoordinates.size() > 0)
         {
             int index = random.nextInt(logicalCoordinates.size());
-            return logicalCoordinates.get(index);
+            Coordinate coordinate = logicalCoordinates.get(index);
+
+            return coordinate;
         }
         else
         {
@@ -636,37 +495,4 @@ public class AI
 enum AIDifficulty
 {
     EASY, MEDIUM, HARD
-}
-
-
-class Probability
-{
-    private Coordinate coordinate;
-    private int probability;
-
-    public Probability(Coordinate coordinate, int probability)
-    {
-        this.coordinate = coordinate;
-        this.probability = probability;
-    }
-
-    public int getProbability()
-    {
-        return probability;
-    }
-
-    public void setProbabilty(int p)
-    {
-        probability = p;
-    }
-
-    public Coordinate getCoordinate()
-    {
-        return coordinate;
-    }
-
-    public void setCoordinate(Coordinate c)
-    {
-        coordinate = c;
-    }
 }
